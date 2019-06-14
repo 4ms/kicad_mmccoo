@@ -144,7 +144,7 @@ def SVG2Zone(filename, board, layer, net):
                 zone_container = board.InsertArea(net.GetNet(), 0, layer,
                                                   int(shape.bound[0][0]*SCALE),
                                                   int(shape.bound[0][1]*SCALE),
-                                                  pcbnew.CPolyLine.DIAGONAL_EDGE)
+                                                  pcbnew.ZONE_CONTAINER.DIAGONAL_EDGE)
                 shape_poly_set = zone_container.Outline()
                 shapeid = 0
             else:

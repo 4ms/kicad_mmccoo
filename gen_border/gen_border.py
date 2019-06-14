@@ -206,7 +206,7 @@ def GenerateBoarder():
     for netname,layername in (powernets):
         net = nets.find(netname).value()[1]
         layer = layertable[layername]
-        newarea = board.InsertArea(net.GetNet(), 0, layer, boardbbox.xl, boardbbox.yl, pcbnew.CPolyLine.DIAGONAL_EDGE)
+        newarea = board.InsertArea(net.GetNet(), 0, layer, boardbbox.xl, boardbbox.yl, pcbnew.ZONE_CONTAINER.DIAGONAL_EDGE)
 
         newoutline = newarea.Outline()
 
@@ -224,7 +224,7 @@ def GenerateBoarder():
         # don't know why this is necessary. When calling InsertArea above, DIAGONAL_EDGE was passed
         # If you save/restore, the zone will come back hatched.
         # before then, the zone boundary will just be a line.
-        # Omit this if you are using pcbnew.CPolyLine.NO_HATCH
+        # Omit this if you are using pcbnew.ZONE_CONTAINER.NO_HATCH
         newarea.Hatch()
 
 

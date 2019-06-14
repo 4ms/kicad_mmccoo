@@ -129,7 +129,7 @@ class zone_actions(graphic_actions):
         pcbpt = pcbpoint.pcbpoint(points[0]).wxpoint()
         zone_container = self.board.InsertArea(self.net.GetNet(), 0, self.layer,
                                                pcbpt.x, pcbpt.y,
-                                               pcbnew.CPolyLine.DIAGONAL_EDGE)
+                                               pcbnew.ZONE_CONTAINER.DIAGONAL_EDGE)
         shape_poly_set = zone_container.Outline()
         shapeid = 0
         for pt in points[1:]:

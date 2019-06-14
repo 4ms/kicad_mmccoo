@@ -217,7 +217,7 @@ def replicate_sheet_trackst(fromnet, tonet, offset):
         #pdb.set_trace()
         newzone = board.InsertArea(tonet.GetNet(), 0, zone.GetLayer(),
                                    coords[0][0]+int(offset[0]), coords[0][1]+int(offset[1]),
-                                   pcbnew.CPolyLine.DIAGONAL_EDGE)
+                                   pcbnew.ZONE_CONTAINER.DIAGONAL_EDGE)
         newoutline = newzone.Outline()
         for pt in coords[1:]:
             newoutline.Append(int(pt[0]+offset[0]), int(pt[1]+offset[1]))

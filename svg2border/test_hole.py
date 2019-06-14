@@ -34,7 +34,7 @@ powerlayer = layertable["B.Cu"]
 # class_zone.h
 zone_container = board.InsertArea(powernet.GetNet(), 0, powerlayer,
                                   int(10*SCALE), int(10*SCALE),
-                                  pcbnew.CPolyLine.DIAGONAL_EDGE)
+                                  pcbnew.ZONE_CONTAINER.DIAGONAL_EDGE)
 
 # shape_poly_set.h
 # this was has been initialized with the point passed to InsertArea

@@ -40,7 +40,7 @@ layer = layertable["B.Cu"]
     
 newarea = board.InsertArea(net.GetNet(), 0, layer,
                            pcbnew.FromMM(10), pcbnew.FromMM(10),
-                           pcbnew.CPolyLine.DIAGONAL_EDGE)
+                           pcbnew.ZONE_CONTAINER.DIAGONAL_EDGE)
 
 newoutline = newarea.Outline()
 newoutline.AppendCorner(pcbnew.FromMM(10), pcbnew.FromMM(20));
